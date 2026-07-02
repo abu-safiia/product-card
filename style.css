@@ -1,0 +1,56 @@
+
+body {
+        font-family: 'Montserrat', sans-serif;
+        color: #515076;
+        font-size: 13px;
+}
+
+.title 
+    {font-size: 70px;
+    font-weight: 400;
+    line-height: 78px;
+    text-align: center;
+}
+
+.name1 {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #A5A3B9;
+}
+
+.name2 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+    color: #515076;
+
+}
+
+.mane-text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #515076;
+
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 300px;
+  padding: 20px;
+  background: #F7F7FA;
+}
+
+    body {
+        background-image: url(images/fon_1.png);
+        background-position: center;
+    }
