@@ -58,14 +58,13 @@ body {
 }
 
 .price {
-display: flex;
-align-items: center;
-gap: 160px;
-font-size: 20px;
-text-align: left;
-margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  text-align: left;
+  margin-top: auto;
 }
-
 .my-image {
     width: 290px;
     height: 245px;
