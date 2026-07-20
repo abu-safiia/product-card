@@ -1,75 +1,128 @@
-
-body {
-        font-family: 'Montserrat', sans-serif;
-        color: #515076;
-        font-size: 13px;
-        background-image: url(images/fon_1.png);
-        background-position: center;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.title 
-    {font-size: 70px;
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #515076;
+    font-size: 13px;
+    line-height: 18px;
+    background-position: center;
+}
+
+.clear-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.compaund {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.compaund__list {
+    padding-left: 15px;
+}
+
+.compaund__list li {
+    line-height: 18px;
+}
+
+.catalog__conteiner {
+    background-image: url(../images/flower_background.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    padding-top: 1px;
+}
+
+.catalog__title {
+    margin-top: 220px;
+    margin-bottom: 110px;
+}
+
+.container {
+    width: 1110px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 70px;
     font-weight: 400;
     line-height: 78px;
     text-align: center;
-}
-
-.product-type {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 12px;
-    color: #A5A3B9;
-    text-align: left;
-}
-
-.cosmetic-product-name {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 27px;
     color: #515076;
-    text-align: left;
 }
 
-.main-text {
+.card__category {
+    display: block;
     font-size: 13px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 24px;
+    color: #A5A3B9;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.card__description {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
     color: #515076;
     text-align: left;
 }
 
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 45px 45px;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
+.card__description p:first-child {
+    margin-top: 0;
 }
 
-.card {
-  width: 300px;
-  padding: 25px;
-  height: 573px;
-  background: #F7F7FA;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.card__description p {
+    margin-bottom: 15px;
 }
-
-.price {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 20px;
-  text-align: left;
-  margin-top: auto;
+.card__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: 20px;
 }
-.my-image {
+.card__image {
+    display: block;
     width: 290px;
     height: 245px;
-    margin: 5px 0;
-    display: block;
+    margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.card__name {
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    line-height: 27px;
+    color: #515076;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products__item {
+    width: 340px;
+    padding: 25px;
+    height: 573px;
+    background: #F7F7FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
