@@ -29,9 +29,9 @@ openGoogleButton.addEventListener('click', openGoogle)
 function openGoogle() {
     const question = confirm('Вы действительно хотите открыть Google?');
     if (question === true) {
-    window.open('https://google.com');
+        window.open('https://google.com');
     }else {
-    return;
+        return;
     }
 }
 
@@ -39,11 +39,11 @@ function openGoogle() {
 //Вывод консоль лог
 
 const outputLogButton = document.querySelector('#output-console-log-button');
-outputLogButton.addEventListener('click', () => outputConsoleLog('Д/з №6'))
+outputLogButton.addEventListener('click', () => outputConsoleLog('Д/з №6'));
 
 function outputConsoleLog(message) {
-    alert(message)
-    console.log(message)
+    alert(message);
+    console.log(message);
 }
 
 
