@@ -57,6 +57,14 @@ body {
     color: #515076;
 }
 
+.color-changing-btn {
+    background-color: rgb(232, 236, 11);
+}
+
+.color-changing-btn.active {
+    background-color: rgb(70, 80, 148);
+}
+
 .card__category {
     display: block;
     font-size: 13px;
