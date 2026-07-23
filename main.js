@@ -30,7 +30,7 @@ function openGoogle() {
     const question = confirm('Вы действительно хотите открыть Google?');
     if (question === true) {
         window.open('https://google.com');
-    }else {
+    } else {
         return;
     }
 }
