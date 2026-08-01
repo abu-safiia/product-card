@@ -72,7 +72,7 @@ console.log(allBooks);
 
 
 // Функция для задания №10
-function isPublishedAfter2000(books) {
+function getBooksWithIsRare(books) {
     return books.map(book => {
         const isRare = book.year > 2000; // редкая
         return { ...book, isRare };
@@ -84,6 +84,6 @@ const books = [
     { title: "Человек-паук: Возвращение домой", year: 2005 },
 ];
 
-const updatedBooks = isPublishedAfter2000(books);
+const updatedBooks = getBooksWithIsRare(books);
 
 console.log(updatedBooks);
