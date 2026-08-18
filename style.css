@@ -116,7 +116,7 @@ body {
     color: #515076;
 }
 
-.products {
+.products-list {
     display: flex;
     flex-wrap: wrap;
     gap: 45px;
