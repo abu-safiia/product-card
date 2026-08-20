@@ -3,47 +3,40 @@ import {products} from './products.js';
 const productTemplate = document.getElementById('product-card-template');
 const productsList = document.querySelector('.products-list');
 
-// Функция №1 — возвращает количество карточек, которое нужно ввести
+// Функция №1 возвращает количество карточек
 function getCardsCount() {
     const userInput = prompt('Сколько карточек отобразить? От 1 до 5');
-
-    //если нажали отмену
     if (userInput === null) {
         return null;
     }
 
     const count = Number(userInput);
-
-    // Проверка: диапазон 1–5
     if (!Number.isInteger(count) || count < 1 || count > 5) {
         alert('Некорректное значение. Введите целое число от 1 до 5.');
-        return getCardsCount(); // повторно спрашиваем
+        return getCardsCount();
     }
-
     return count;
 }
+// Функция №2 рендерит карточки
+function renderProducts(Array) {
+    Array.forEach(product => {
+    const Clone = productTemplate.content.cloneNode(true);
+    Clone.querySelector('.card__image').src = `images/${product.image}.png`;
+    Clone.querySelector('.card__category').textContent = product.category;
+    Clone.querySelector('.card__name').textContent = product.name;
+    Clone.querySelector('.card__description p').textContent = product.description;
 
-// Функция №2 —рендерит эти карточки (принимая массив аргументом)
-function renderProducts(productsArray) {
-    productsArray.forEach(product => {
-    const productClone = productTemplate.content.cloneNode(true);
-    productClone.querySelector('.card__image').src = product.image;
-    productClone.querySelector('.card__category').textContent = product.category;
-    productClone.querySelector('.card__name').textContent = product.name;
-    productClone.querySelector('.card__description p').textContent = product.description;
-
-    const compoundList = productClone.querySelector('.compaund__list');
-    product.compound.forEach(item => {
+    const compoundList = Clone.querySelector('.compaund__list');
+    product.ingredients.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
         compoundList.appendChild(li);
     });
 
-    productClone.querySelector('.card__price span').textContent = product.price;
-    productsList.appendChild(productClone);
+    Clone.querySelector('.card__price span').textContent = `${product.price.toLocaleString('ru-RU')} ${product.currency}`;
+    productsList.appendChild(Clone);
 });
 }
-
 
 const cardsCount = getCardsCount();
 
@@ -51,15 +44,12 @@ if (cardsCount !== null) {
     renderProducts(products.slice(0, cardsCount));
 }
 
-//Используя метод .reduce(), получить массив объектов, 
-// где ключем является название продукта, а значением - его описание
-
-    const productDescriptions = products.reduce((acc, product) => {
-        acc.push({ [product.name]: product.description });
-        return acc;
+const productDescriptions = products.reduce((acc, product) => {
+    acc.push({ [product.name]: product.description });
+    return acc;
     }, []);
 
-    console.log(productDescriptions);
+console.log(productDescriptions);
 
 
 
