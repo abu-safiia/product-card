@@ -18,23 +18,23 @@ function getCardsCount() {
     return count;
 }
 // Функция №2 рендерит карточки
-function renderProducts(Array) {
-    Array.forEach(product => {
-    const Clone = productTemplate.content.cloneNode(true);
-    Clone.querySelector('.card__image').src = `images/${product.image}.png`;
-    Clone.querySelector('.card__category').textContent = product.category;
-    Clone.querySelector('.card__name').textContent = product.name;
-    Clone.querySelector('.card__description p').textContent = product.description;
+function renderProducts(itemsArray) {
+    itemsArray.forEach(product => {
+    const clone = productTemplate.content.cloneNode(true);
+    clone.querySelector('.card__image').src = `images/${product.image}.png`;
+    clone.querySelector('.card__category').textContent = product.category;
+    clone.querySelector('.card__name').textContent = product.name;
+    clone.querySelector('.card__description p').textContent = product.description;
 
-    const compoundList = Clone.querySelector('.compaund__list');
+    const compoundList = clone.querySelector('.compaund__list');
     product.ingredients.forEach(item => {
         const li = document.createElement('li');
         li.textContent = item;
         compoundList.appendChild(li);
     });
 
-    Clone.querySelector('.card__price span').textContent = `${product.price.toLocaleString('ru-RU')} ${product.currency}`;
-    productsList.appendChild(Clone);
+    clone.querySelector('.card__price span').textContent = `${product.price.toLocaleString('ru-RU')} ${product.currency}`;
+    productsList.appendChild(clone);
 });
 }
 
@@ -47,7 +47,7 @@ if (cardsCount !== null) {
 const productDescriptions = products.reduce((acc, product) => {
     acc.push({ [product.name]: product.description });
     return acc;
-    }, []);
+}, []);
 
 console.log(productDescriptions);
 
