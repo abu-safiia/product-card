@@ -19,145 +19,39 @@
             <button id="output-console-log-button">Вывести сообщение в консоль лог</button>
             <button class="color-changing-btn">Нажать на кнопку</button>
 
-            <ul class="products clear-list">
-
-<!--1 первая карточка увлажняющий мусс-->
-
-                <li class="products__item card">
-                    <img src="images/mousse_cosmetics.png" alt="Увлажняющий мусс" class="card__image" />
-                    <span class="card__category">для нормальной кожи</span>
-                    <h2 class="card__name">Увлажняющий мусс</h2>
-
-                    <div class="card__description">
-                        <p>Глубоко увлажняют кожу лица, оставляя её мягкой и гладкой.</p>
-                    </div>
-
-                    <div class="card__compaund compaund">
-                        <span class="card__compaund">Состав:</span>
-                        <ul class="compaund__list">
-                            <li>активные натуральные комплексы</li>
-                            <li>витамины С, А, РР, В И Е</li>
-                            <li>солнцезащитные компоненты</li>
-                        </ul>
-                    </div>
-
-                    <div class="card__price">
-                        <b>Цена</b>
-                        <span>2 750 &#8381</span>
-                    </div>
-                </li>
-
-<!--2 вторая карточка увлажняющая маска-->
-
-                <li class="products__item card">
-                    <img src="images/mask_cosmetics.png" alt="Увлажняющая маска" class="card__image" />
-                    <span class="card__category">для нормальной кожи</span>
-                    <h2 class="card__name">Увлажняющая маска</h2>
-
-                    <div class="card__description">
-                        <p>Способствует удерживанию влаги в верхних слоях кожи</p>
-                    </div>
-
-                    <div class="card__compaund compaund">
-                        <span class="card__compaund">Состав:</span>
-                        <ul class="compaund__list">
-                            <li>воски</li>
-                            <li>минералы</li>
-                            <li>масла</li>
-                        </ul>
-                    </div>
-
-                    <div class="card__price">
-                        <b>Цена</b>
-                        <span>3 500 &#8381</span>
-                    </div>
-                </li>
-
-<!--3 третья карточка гель для умывания-->
-
-                <li class="products__item card">
-                    <img src="images/gel_cosmetics.png" alt="Гель для умывания" class="card__image" />
-                    <span class="card__category">для нормальной кожи</span>
-                    <h2 class="card__name">Гель для умывания</h2>
-
-                    <div class="card__description">
-                        <p>Интенсивно очищает, не повреждает защитный барьер кожи.</p>
-                    </div>
-
-                    <div class="card__compaund compaund">
-                        <span class="card__compaund">Состав:</span>
-                        <ul class="compaund__list">
-                            <li>минералы</li>
-                            <li>витамины С, А, РР, В И Е</li>
-                            <li>солнцезащитные компоненты</li>
-                        </ul>
-                    </div>
-
-                    <div class="card__price">
-                        <b>Цена</b>
-                        <span>1 650 &#8381</span>
-                    </div>
-                </li>
-
-<!--4 четвертая карточка подарочный набор №1-->
-
-                <li class="products__item card">
-                    <img src="images/gift-set1_cosmetics.png" alt="Подарочный набор №1" class="card__image" />
-                    <span class="card__category">для нормальной кожи</span>
-                    <h2 class="card__name">Подарочный набор №1</h2>
-
-                    <div class="card__description">
-                        <p>Набор, состоящий из увлажняющего крема и маски.</p>
-                    </div>
-
-                    <div class="card__compaund compaund">
-                        <span class="card__compaund">Состав:</span>
-                        <ul class="compaund__list">
-                            <li>воски</li>
-                            <li>минералы</li>
-                            <li>масла</li>
-                        </ul>
-                    </div>
-
-                    <div class="card__price">
-                        <b>Цена</b>
-                        <span>2 750 &#8381</span>
-                    </div>
-                </li>
-
-<!--5 пятая карточка подарочный набор №5-->
-
-                <li class="products__item card">
-                    <img src="images/gift-set5_cosmetics.png" alt="Подарочный набор №5" class="card__image" />
-                    <span class="card__category">для нормальной кожи</span>
-                    <h2 class="card__name">Подарочный набор №5</h2>
-
-                    <div class="card__description">
-                        <p>Весь набор средств Invisible symphony, крем, маска, мусс и гель для
-                        умывания.</p>
-                    </div>
-
-                    <div class="card__compaund compaund">
-                        <span class="card__compaund">Состав:</span>
-                        <ul class="compaund__list">
-                            <li>воски</li>
-                            <li>минералы</li>
-                            <li>масла</li>
-                        </ul>
-                    </div>
-
-                    <div class="card__price">
-                        <b>Цена</b>
-                        <span>7 520 &#8381</span>
-                    </div>
-                </li>
-            </ul>
+            
         </div>
     </main>
-    <script src="../main.js"></script>
-    <script src="../homework-7.js"></script>
+
+<!--1 первая карточка увлажняющий мусс-->
+        <ul class="products-list clear-list"></ul>
+            <template id="product-card-template">
+                <li class="products__item card">
+                    <img src="" alt="" class="card__image"/>
+                    <span class="card__category"></span>
+                    <h2 class="card__name"></h2>
+
+                    <div class="card__description">
+                        <p></p>
+                    </div>
+
+                    <div class="card__compaund compaund">
+                        <span class="card__compaund">Состав:</span>
+                        <ul class="compaund__list"></ul>
+                    </div>
+
+                    <div class="card__price">
+                        <b>Цена:</b>
+                        <span></span>
+                    </div>
+                </li>
+            </template>
+
+    <script src="main.js"></script>
+    <script src="homework-7.js"></script>
     <script src="homework-8.js"></script>
     <script type="module" src="./homework-9.js"></script>
+    <script type="module" src="./homework-10.js"></script>
 </body>
 
 </html>

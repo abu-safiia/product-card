@@ -6,6 +6,7 @@ const blueColorHash = '#ADD8E6';
 const greenColorHash = '#98FB98';
 
 changeColorAllCardsButton.addEventListener('click', () => {
+    const productCards = document.querySelectorAll('.card');
     productCards.forEach((card) => card.style.backgroundColor = blueColorHash)
 });
 
@@ -16,8 +17,11 @@ const firstProductCard = document.querySelector('.card');
 const changeColorFirstCardButton = document.querySelector('#change-color-first-card-button');
 
 changeColorFirstCardButton.addEventListener('click', () => {
+    const firstProductCard = document.querySelector('.card');
+    if (firstProductCard) {
     firstProductCard.style.backgroundColor = greenColorHash;
-})
+    }
+});
 
 
 //Открыть страницу Google
