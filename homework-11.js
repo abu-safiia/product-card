@@ -8,12 +8,9 @@ formSubscribe.addEventListener('submit', (event) => {
         formSubscribe.reportValidity();
         return;
     }   
-
     console.log({ email: subscribeEmailInput.value });
-
     formSubscribe.reset();
 });
-
 
 //модальное окно регистрации
 const registrationButton = document.getElementById('registration-button');
@@ -21,7 +18,6 @@ const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modal-close');
 const overlay = modal.querySelector('.overlay');
 const registrationForm = document.getElementById('registration-form');
-
 const passwordInput = document.getElementById('password');
 const passwordRepeatInput = document.getElementById('password-repeat');
 
@@ -30,7 +26,6 @@ let user;
 function openModal() {
     modal.classList.add('modal-showed');
 }
-
 function closeModal() {
     modal.classList.remove('modal-showed');
 }
@@ -41,12 +36,10 @@ overlay.addEventListener('click', closeModal);
 
 registrationForm.addEventListener('submit', (event) => {
     event.preventDefault();
-
     if (!registrationForm.checkValidity()) {
         registrationForm.reportValidity();
         return;
     }
-
     if (passwordInput.value !== passwordRepeatInput.value) {
         alert('Пароли не совпадают');
         return;
@@ -54,17 +47,12 @@ registrationForm.addEventListener('submit', (event) => {
 
     const formData = new FormData(registrationForm);
 
-    user = {
-        firstName: formData.get('firstName'),
-        lastName: formData.get('lastName'),
-        birthDate: formData.get('birthDate'),
-        login: formData.get('login'),
-        password: formData.get('password'),
-        createdOn: new Date(),
-    };
+user = {
+    ...Object.fromEntries(formData),
+    createdOn: new Date(),
+};
 
     console.log(user);
-
     registrationForm.reset();
     closeModal();
 });
