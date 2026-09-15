@@ -47,10 +47,10 @@ registrationForm.addEventListener('submit', (event) => {
 
     const formData = new FormData(registrationForm);
 
-user = {
-    ...Object.fromEntries(formData),
-    createdOn: new Date(),
-};
+    user = {
+        ...Object.fromEntries(formData),
+        createdOn: new Date(),
+    };
 
     console.log(user);
     registrationForm.reset();
