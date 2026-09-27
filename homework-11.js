@@ -1,43 +1,36 @@
-const formSubscribe = document.getElementById('form-subscribe');
-const subscribeEmailInput = document.getElementById('email-subscribe');
+import { Modal } from './Modal.js';
+import { Form } from './Form.js';
 
-formSubscribe.addEventListener('submit', (event) => {
+const subscribeForm = new Form('form-subscribe');
+
+subscribeForm.form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    if (!formSubscribe.checkValidity()) {
-        formSubscribe.reportValidity();
+    if (!subscribeForm.isValid()) {
+        subscribeForm.form.reportValidity();
         return;
-    }   
-    console.log({ email: subscribeEmailInput.value });
-    formSubscribe.reset();
+    }
+    console.log(subscribeForm.getValues());
+    subscribeForm.reset();
 });
 
 //модальное окно регистрации
+const registrationModal = new Modal('modal');
 const registrationButton = document.getElementById('registration-button');
-const modal = document.getElementById('modal');
-const modalClose = document.getElementById('modal-close');
-const overlay = modal.querySelector('.overlay');
-const registrationForm = document.getElementById('registration-form');
+const overlay = registrationModal.modal.querySelector('.overlay');
+const registrationFormObj = new Form('registration-form');
 const passwordInput = document.getElementById('password');
 const passwordRepeatInput = document.getElementById('password-repeat');
 
 let user;
 
-function openModal() {
-    modal.classList.add('modal-showed');
-}
-function closeModal() {
-    modal.classList.remove('modal-showed');
-}
+registrationButton.addEventListener('click', () => registrationModal.open());
+overlay.addEventListener('click', () => registrationModal.close());
 
-registrationButton.addEventListener('click', openModal);
-modalClose.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
-
-registrationForm.addEventListener('submit', (event) => {
+registrationFormObj.form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!registrationForm.checkValidity()) {
-        registrationForm.reportValidity();
+    if (!registrationFormObj.isValid()) {
+        registrationFormObj.form.reportValidity();
         return;
     }
     if (passwordInput.value !== passwordRepeatInput.value) {
@@ -45,14 +38,12 @@ registrationForm.addEventListener('submit', (event) => {
         return;
     }
 
-    const formData = new FormData(registrationForm);
-
     user = {
-        ...Object.fromEntries(formData),
+        ...registrationFormObj.getValues(),
         createdOn: new Date(),
     };
 
     console.log(user);
-    registrationForm.reset();
-    closeModal();
+    registrationFormObj.reset();
+    registrationModal.close();
 });
