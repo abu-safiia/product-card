@@ -3,46 +3,46 @@ class Drink {
     size;
     price;
     #temperature;
+
     constructor(name, size, price, temperature) {
-//чтобы не имел экземпляров
-        if(new.target === Drink) {
+        if (new.target === Drink) {
             throw new Error("Нельзя создать обьект класса Drink")
         }
-//если ошибка ниже код не выполнится
+
         this.name = name;
         this.size = size;
         this.price = price;
         this.#temperature = temperature;
     }
-//получить информацию про напиток
+
     getInfo() {
         return `Название: ${this.name}, Размер: ${this.size} мл, Цена: ${this.price} ₽, Температура: ${this.#temperature} °C`;
     }
-//получить температуру напитка
+
     getTemperature() {
         return this.#temperature;
     }
-//установить температуру напитка
+
     setTemperature(temperat) {
         this.#temperature = temperat;
         console.log(`Температура: ${this.name} - ${temperat}°C`);
     }
-//приготовить напиток (приватный)
+
     #prepare() {
         console.log(`${this.name} готовиться...`);
     }
-//подать напиток(serveDrink вызывает приватный #prepare)
+
     serveDrink() {
         this.#prepare();
-// побочное действие(остывание) условие для того, чтобы напитки не остывали ниже комнт. темпер
-if (this.#temperature > 20) {
+
+        if (this.#temperature > 20) {
     this.#temperature = this.#temperature - 5;
     }
     console.log(`${this.name} подан клиенту, температура: ${this.#temperature}°C`);
     }
 }
 
-//Кофе. доп.параметры: вид зерен и молоко
+
 class Coffee extends Drink {
     constructor(name, size, price, temperature, beanVariety, milkVariety) {
         super(name, size, price, temperature);
@@ -56,7 +56,6 @@ class Coffee extends Drink {
 }
 
 
-//Чай. доп. параметры: вид чая и сахар
 class Tea extends Drink {
     constructor(name, size, price, temperature, teaVariety, sugar) {
         super(name, size, price, temperature);
@@ -70,7 +69,6 @@ class Tea extends Drink {
 }
 
 
-//Лимонад. доп. параметры: вкус, газированый или нет
 class Limonade extends Drink {
     constructor(name, size, price, temperature, test, carbonated) {
         super(name, size, price, temperature);
@@ -83,17 +81,17 @@ class Limonade extends Drink {
     }
 }
 
-// Класс Кафе
+
 class Cafe {
     constructor(name, location) {
         this.name = name;
         this.location = location;
     }
-//получаем информацию о Кафе
+
     getInfo() {
         return`Кафе: "${this.name}", адрес: ${this.location}`;
     }
-//заказываем напиток
+
 orderDrink(drink) {
     console.log(`Заказ в "${this.name}": ${drink.name}`);
     drink.serveDrink();
@@ -101,7 +99,7 @@ orderDrink(drink) {
 }
 
 
-//значения
+
 const cafe = new Cafe("Восток", "ул. Ленина, 213/2");
 console.log(cafe.getInfo());
 
